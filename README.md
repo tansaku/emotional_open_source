@@ -8,7 +8,7 @@ The difference between open and closed source software; who pays for work on ope
 ## 2. What does it mean to be Agile?
 The Agile Manifesto; the alternatives for project management; the evolution of the Agile approach and variations & components such as XP, Scrum, Kanban etc.
 
-## 3. Joining an Existing Project 
+## 3. [Joining an Existing Project](chapters/joining_an_existing_project.md)
 How to get involved with an open source project; getting set up with the project; what kinds of contributions you can make, understanding the contribution flow
 
 ## 4. Keeping Pace with a Project
