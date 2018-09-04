@@ -4,19 +4,33 @@ Joining a Project
 :construction: UNDER CONSTRUCTION :construction:
 
 
-* [Motivations for contributing to an Open Source project](#motivations-for-contributing-to-an-open-source-project)
-* [Length of commitment](#length-of-commitment)
-* [Type of contribution](#type-of-contribution)
-  - [Documentation vs Code](#documentation-vs-code)
-  - [Importance of installing and testing locally](#importance-of-installing-and-testing-locally)
-* [What to do when stuck installing or testing](#what-to-do-when-stuck-installing-or-testing)
-* [When and how to contribute](#when-and-how-to-contribute)
-* [Reading the project documentation](#reading-the-project-documentation)
-* [Contacting the project manager](#contacting-the-project-manager)
-* [Understanding the project contribution flow](#understanding-the-project-contribution-flow)
-* [Submitting your first “pull request”](#submitting-your-first-"pull-request")
-* [Going with the flow](#going-with-the-flow)
-* [How to contribute when you have limited time](#not-much-time-to-spare)
+- [Motivations for contributing to an Open Source project](#motivations-for-contributing-to-an-open-source-project)
+- [Length of commitment](#length-of-commitment)
+  * [What's a Bug Fix? (sidebar)](#what-s-a-bug-fix---sidebar-)
+- [Type of contribution](#type-of-contribution)
+  * [Testing (Sidebar?)](#testing--sidebar--)
+  * [Machines you control (Sidebar?)](#machines-you-control--sidebar--)
+- [What to do when stuck installing or testing](#what-to-do-when-stuck-installing-or-testing)
+  * [How to pull down code (sidebar?)](#how-to-pull-down-code--sidebar--)
+- [Where and how to ask (sidebar?)](#where-and-how-to-ask--sidebar--)
+- [READMEs and CONTRIBUTING docs (sidebar?)](#readmes-and-contributing-docs--sidebar--)
+- [When and how to contribute](#when-and-how-to-contribute)
+  * [Voting or Planning Poker (sidebar?)](#voting-or-planning-poker--sidebar--)
+  * [Scrums and Standups (sidebar?)](#scrums-and-standups--sidebar--)
+- [Reading the project documentation](#reading-the-project-documentation)
+  * [Cucumber (sidebar?)](#cucumber--sidebar--)
+  * [Pull Requests (sidebar?)](#pull-requests--sidebar--)
+  * [Branches and Forks (sidebar?)](#branches-and-forks--sidebar--)
+- [Contacting the project manager](#contacting-the-project-manager)
+- [Understanding the project contribution flow](#understanding-the-project-contribution-flow)
+  * [Kanban (SideBar?)](#kanban--sidebar--)
+- [Submitting your first “pull request”](#submitting-your-first--pull-request-)
+- [Going with the flow](#going-with-the-flow)
+- [Not much time to spare?](#not-much-time-to-spare-)
+  * [PairProgramming (sidebar?)](#pairprogramming--sidebar--)
+- [References](#references)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 ## Motivations for contributing to an Open Source project
