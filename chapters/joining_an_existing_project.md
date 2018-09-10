@@ -6,7 +6,6 @@ Joining a Project
 
 - [Motivations for contributing to an Open Source project](#motivations-for-contributing-to-an-open-source-project)
 - [Length of commitment](#length-of-commitment)
-  * [What's a Bug Fix? (sidebar)](#what-s-a-bug-fix---sidebar-)
 - [Type of contribution](#type-of-contribution)
   * [Testing (Sidebar?)](#testing--sidebar--)
   * [Machines you control (Sidebar?)](#machines-you-control--sidebar--)
