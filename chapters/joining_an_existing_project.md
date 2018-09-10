@@ -41,9 +41,12 @@ So you want to join an Open Source software project?  Your motivations are proba
 
 Making a single contribution to an Open Source project doesn't commit you to being a lifelong project member.  Many individuals make a single contribution to a project and then move on.   However, whether you've got your eye on a single bug-fix, or getting involved for a longer period, there are some things you can do to get the most out of the experience, and maximise the chances that your contribution will be a positive one for both you, the project, and the project community.
 
-> ### What's a Bug Fix? (sidebar)
 
-> The term "bug" predates computers and software and has been used for many years to describe glitches or problems with mechanical systems.  To fix a software bug is to make a change to the code that removes an unanticipated problem in the software execution. Thus one common type of contribution to Open Source projects is a "bug-fix"; a change or set of changes to the code that addresses the specified problem or "bug". 
+<details>
+    <summary>What's a Bug Fix?</summary>
+    The term "bug" predates computers and software and has been used for many years to describe glitches or problems with mechanical systems.  To fix a software bug is to make a change to the code that removes an unanticipated problem in the software execution. Thus one common type of contribution to Open Source projects is a "bug-fix"; a change or set of changes to the code that addresses the specified problem or "bug".
+</details>
+ 
 
 
 ## Type of contribution
