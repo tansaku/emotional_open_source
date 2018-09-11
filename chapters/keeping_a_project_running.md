@@ -55,8 +55,13 @@ Things you might ask for:
 * Highlighting failures in Continuous Integration (C.I.), code coverage, tests
 * requesting associated changes in production
 
-Depending on the experience and circumstances of the contributor they might need help to understand and make any of the above changes.  Some pull requests might require many, even all, ,of the above changes but asking for every single change to be made at the same time will likely overwhelm and overload both new and old contributors.
+Depending on the experience and circumstances of the contributor they might need help to understand and make any of the above changes.  Some pull requests might require many, even all, of the above changes but asking for every single change to be made at the same time will likely overwhelm and overload both new and old contributors.
 
+The key technique that's excited me recently is not having to get PRs from others perfect before pulling them in.  In a wonderful step GitHub has made it so that by default you are able to edit others PRs on your project which means that if there are little changes you want made you can just make them.  This is great because those little changes will often be tedious for others to make, and when they are volunteering their time, the request for those minor changes might be the thing that causes the PR to die.  Of course sometimes the contributor will really want to be the one to make the suggested changes as part of their own learning or simply getting the satisfaction of having made the update.
+
+In the past I have often thought that in order to maintain the code quality of the project we must keep requesting changes until a pull request is of sufficient quality, but my rule of thumb now is to ask for one or two rounds of non-trivial changes before merging it in or closing it.   Where possible any trivial changes should be automated or made my the maintainer themselves.  Contributors get a great emotional boost from having their contributions merged, so unless it is a security risk or will break the build then I think it's preferrable to merge the PR in and then if, as the maintainer, you have serious concerns that the code should be going in a different direction, or you want extensive variable renaming etc. then you can make those changes yourself later.  Or serendipitously discover later that actually those changes you wanted weren't so important.
+
+Naturally given committed contributors that you have good communications with, you can discuss the code direction and domain model (naming etc.) in friendly terms in a way that hopefully doesn't quash people's enthusiasm.  However when people are getting started the boost from having just a single round of simple changes and getting their PR merged can reap dividends in terms of the mood of the community and the contributors enthusiasm for the project in future.
 
 
 Notes
@@ -71,3 +76,82 @@ Could ask LRUG about various things:
 * how to get CI to pop the actual error message into the PR
 
 Wanted to pull in thoughts from end of react mob about refactoring ...
+
+which was this:
+
+extracting components (extracting methods)
+
+* we want more unit tests
+* we want to practice extracting them
+* we want shorter files (readability and maintainability)
+* we want to be able to re-use those components
+
+DRY - Don't Repeat Yourself ---> introducing a dependency
+
+Sam's rule of thumb is see it three times
+
+
+3
+4
+chunk a
+5
+6
+chunk b
+7
+8
+chunk c
+9
+
+
+==> foo
+
+
+3
+4
+foo
+5
+6
+foo
+7
+8
+foo
+9
+
+
+--> updates to foo happen in one place - all seems good
+
+
+danger
+
+3
+4
+foo <-- now needs to change and do differently from the next two
+5
+6
+foo
+7
+8
+foo
+9
+
+--> change foo with a parameter  foo(flag = false)
+--> reinsert the chunk a back in?
+
+
+3
+4
+chunk a
+i
+ii
+iii
+end
+5
+6
+7
+8
+9
+
+4
+i
+
+
