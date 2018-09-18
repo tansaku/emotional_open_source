@@ -64,6 +64,25 @@ In the past I have often thought that in order to maintain the code quality of t
 Naturally given committed contributors that you have good communications with, you can discuss the code direction and domain model (naming etc.) in friendly terms in a way that hopefully doesn't quash people's enthusiasm.  However when people are getting started the boost from having just a single round of simple changes and getting their PR merged can reap dividends in terms of the mood of the community and the contributors enthusiasm for the project in future.
 
 
+Managing Project Flow
+=====================
+
+Network Testing
+----------------
+
+Testing level abstraction (Mark Burns)
+
+* allow tests to hit network
+* record and cache the network interactions
+* stub the network calls
+* stub the libraries that wrap the network operations
+
+Network caches
+
+* automatic re-recording
+* manual update (using live mode?)
+
+
 Notes
 -----
 
