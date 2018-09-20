@@ -77,10 +77,51 @@ Testing level abstraction (Mark Burns)
 * stub the network calls
 * stub the libraries that wrap the network operations
 
+Mark Burns suggests:
+
+> Generally I think people tend to test HTTP services at the wrong abstraction. So it might be why it’s a pain point for you. Your non http related test code ends up having to know about http (via VCR or web mock or whatever).
+
+> It might be easier for you to wrap your services in a gem or library and inside that library thoroughly test the HTTP interactions.
+
+> Then outside of the library avoid the leaky http abstraction.
+> I’ve seen and done it myself so I wrote a post about it a few years ago. It’s probably a bit dated now.
+
+http://blog.polyglotsoftware.co.uk/2014/02/07/a-pattern-for-stubbing-out-apis-with-rspec.html
+
+The rule of thumb that we've followed it to make our acceptance tests (using Cucumber/Capybara/RSpec) as "realistic" as possible, so they use VCR as much as possible, and webmock in places where we need extra confirmation about network connections (just reviewing I think we're mainly recording interactions with 3rd party services such as stripe, pivotaltracker, codeclimate and github).
+
+> These are exactly the kinds of tests that you should be able to draw a line in the stack trace beyond which you stop testing and start trusting.  Presumably you’re using a gem for this. As soon as you enter that library code is the point at which it makes sense to stub or mock.  Your business has already implicitly chosen to trust these services and gems.  I’d say you gain little extra confidence from recording and replaying those interactions for every integration test. Now if you _did_ want to be more cautious, you could always have some tests that test the specific integration and occasionally update the cassettes. But most of the time you’d be repeating tests that should exist inside the gem test suite. And it’s literally not your business to be doing that. Unless you wrote the gem. But even then the tests should live together and not be repeated all over the test suite for unrelated tests.  It’s probably only an approach I’d advise if I didn’t trust the third party and still I would want localised tests for the specific integration.  But if it were the case that I didn’t trust the gem’s own test suites, I probably wouldn’t have recommended using them anyway.
+
+Our unit tests are all well stubbed, and then the integration tests have a mix of gem stubbing and webmock.  You might well be right, and perhaps we need to give up on purist "realism" in our acceptance tests and use more gem/library stubbing ...
+
+What's unclear is how much the more "realistic" acceptance tests have ever bought us (nothing? a little? a lot?), compared to the trouble it creates for new developers trying to manage the VCR caches ...
+
+> I’d guess close to nothing, but costing a lot. 
+
+Tim Diggins says:
+
+> I think a few "smoke tests" with as realistic end points as possible are really great -- but for me, these need to run primarily on CI rather than on developer machines (so VCR never seems like an option to me, but maybe I just don't understand it well enough) -- and I've tried to go with fully real services (e.g. a real google sheet, a real (but sandboxed) payment processor) etc. Then if I've got a smoke test ~ per service, then hopefully it is just flakey enough to fail when something substantial changes with that service (or our usage of it), and hopefully not so flakey that we just say -- oh that's just that flakey smoke test, let's ignore it (though "rerun" on CI usually gets around that.
+
+> I think it's worth identifying the division(and function) of smoke tests as opposed to  acceptance tests. One to ruminate on.
+
+
 Network caches
 
 * automatic re-recording
 * manual update (using live mode?)
+
+
+Machine to machine variation
+
+Rhodri Davies says:
+
+> When you say cache are you referring to cassettes? If so then I've always kept them in the repo. If there are fields in the request/response that vary from machine to machine then there are ways to get VCR to ignore those fields. 
+
+Yes, the cassettes.  We also have puffing billy caching network interactions from the browsers running in the acceptance tests, so I tend to use the word "cache" to refer to the set of files that VCR and PuffingBilly generate and "manage".  Perhaps I am using the term incorrectly ...
+
+That's an interesting idea that some of the problem is caused by machine to machine variation, e.g. in the user agent field of what have you.
+
+I had been assuming that the problem was arising when tests failed on another developers machine (for whatever reason) and then a slightly different set of network interactions was arising.  Or more specifically when a developer was working on a new feature and adding to the tests and then seeing a load of new cassettes and not being sure about whether to add the files, leave them out, .gitignore them or what.  Not such a hassle for an experienced developer, but working with a lot of folks just getting into coding it seems this is a particular pain point.
 
 
 Notes
