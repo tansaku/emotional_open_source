@@ -135,83 +135,97 @@ Could ask LRUG about various things:
 * their thoughts on responding to pull requests ...
 * how to get CI to pop the actual error message into the PR
 
-Wanted to pull in thoughts from end of react mob about refactoring ...
+Refactoring Directions
+----------------------
 
-which was this:
+There can be many motivations for extracting components (methods, objects, functions, what have you) from existing code that might be judged in need of refactoring, e.g. 
 
-extracting components (extracting methods)
+* the current code is not easy to unit test and we want to make it easier to test
+* we want to practice the process of refactoring code into smaller components
+* we want shorter files for readability and maintainability
+* we want (or just anticipate) to re-use the smaller components
 
-* we want more unit tests
-* we want to practice extracting them
-* we want shorter files (readability and maintainability)
-* we want to be able to re-use those components
+There's the DRY mantra which is Don't Repeat Yourself and at the high level is a warning about copying and pasting the same code into multiple places.  Repeating the same code over and over means that the code is longer and when that small section of code needs to change, it needs to be updated in multiple places.  However it's also important to note the flip-side of DRYing things out, which is that each time you do it you introduce a dependency, a single point of failure.  The real difficulty is that no one has a privileged view of the future, being able to predict precisely when and in what ways the code will need to evolve to meet users needs.  There may be general agreement that a spaghetti mess of replicated code with little apparent rhyme or reason is a nightmare to maintain, but personally I tend to use the rule of three and my knowledge about upcoming feature requests and likely changes when deciding whether to DRY something out.
 
-DRY - Don't Repeat Yourself ---> introducing a dependency
+Seeing some piece of code replicated two times is not enough for me.  If only twice I worry that the two pieces of code might need to diverge in future, and that prematurely DRYing them out will force me into a situation where I have to extract the two pieces out again later on in order to support that divergence.  You might say, hey, well when you need to split them back out, split them back out then, why worry about the future?  The point is that I don't have unlimited spare time to spend on arbitary refactorings if I want to continue to be able to keep working on the kinds of charity open source projects I want to work on.  I'm not being paid for arbitrary refactorings, but for delivering working software to clients, or not being paid for it, but that's another story :-)
 
-Sam's rule of thumb is see it three times
+Ah, you say, but refactoring the code well will ultimately help you deliver working software to the clients, and to an extent you are absolutely right, but which is the right refactoring and when is the right time to do it?  I don't think anyone would assert that there is any refactoring that is absolutely correct.  It all depends on how the code will evolve in the future, so I like to see something repeated at least three times before I start to really pay attention to it.  Of course that's another rought guideline that could be overlooked when the circumstances demanded.  The point I'm trying to make is just that caution should be exercised on both sides; excessive refactoring and too-little are both evils depending on the circumstances.
 
+Imagine that we're perusing some code with the following chunk structure:
 
-3
-4
+```
+chunk 3
+chunk 4
 chunk a
-5
-6
+chunk 5
+chunk 6
 chunk b
-7
-8
+chunk 7
+chunk 8
 chunk c
-9
+chunk 9
+```
+
+and we notice that chunks a, b and c are extremely similar, nay identical, and that we can refactor the code by extracting a method out called `foo`.  Now our code looks like this
+
+```
+chunk 3
+chunk 4
+chunk foo
+chunk 5
+chunk 6
+chunk foo
+chunk 7
+chunk 8
+chunk foo
+chunk 9
+
+method foo
+  chunk a/b/c/
+```
+
+Now when we need to make a change to `foo` we can do it all in one place, rather than three times over.  And if we've chosen an nice comprehensible unambiguous name for `foo` then we can more easily understand the code rather than having to mentally parse the contents of foo each time, "unpacked" as it were, in each of the three locations.
+
+However there is a danger, at least a hypothetical one.  What if the first chunk foo now needs to do something different from the subsequent two?
 
 
-==> foo
+```
+chunk 3
+chunk 4
+chunk foo <-- needs to be different from next two
+chunk 5
+chunk 6
+chunk foo
+chunk 7
+chunk 8
+chunk foo
+chunk 9
 
+method foo
+  chunk a/b/c/
+```
 
-3
-4
-foo
-5
-6
-foo
-7
-8
-foo
-9
+What do we do here?  Perhaps we set it up such that we can change foo with a parameter, perhaps a boolean that can be false by default so that `foo` retains its default functionality for the latter two cases.   Perhaps the change is more extensive and we are tempted to reinsert the changed `foo` code back into the original location:
 
+```
+chunk 3
+chunk 4
+chunk i
+chunk ii
+chunk iii
+chunk 5
+chunk 6
+chunk foo
+chunk 7
+chunk 8
+chunk foo
+chunk 9
 
---> updates to foo happen in one place - all seems good
+method foo
+  chunk a/b/c/
+```
 
+All good perhaps, and difficult to imagine without the specifics of the code and the requested changes, but in some ways this is the point.  Choosing to refactor by extracting a component is a subjective judgement call that depends on the circumstances.  And as circumstances change, maybe you'll be un-doing that change in the future.  Maybe un-doing it in the future is okay.  Nicely refactored code is being considerate to your fellow developers and yourself in the future, but the future is unclear.  Taking the code in one refactored direction today could just as easily create an architecture that has to be unpicked tomorrow.  As Sandi Metz says in POODR, you should be thinking about which parts of the codebase are likely to be affected by upcoming feature requests.  If there's about to be a lot of activity in a particular part of a codebase then you might want to hold off refactoring until you better understand all the pressures that the new requests are going to put on that area. 
 
-danger
-
-3
-4
-foo <-- now needs to change and do differently from the next two
-5
-6
-foo
-7
-8
-foo
-9
-
---> change foo with a parameter  foo(flag = false)
---> reinsert the chunk a back in?
-
-
-3
-4
-chunk a
-i
-ii
-iii
-end
-5
-6
-7
-8
-9
-
-4
-i
-
+Quiet areas of the codebase can be less controversially cleaned up, although the pressure may always be on delivering features.  If you're lucky you're working in a situation where your living expenses are being met and are not contingent on delivering a feature by a particular time.  Then you can slowly and calmly be cleaning up parts of the codebase and taking the long view.  Many of us work in slightly more pressured environments and maybe want to avoid unpicking refactorings that didn't seem to fit with the new features that fell on us.  Maybe there are refactorings that are unequivocally good under all, or most circumstances?  If there are I'm not clear on what they are ...
 
