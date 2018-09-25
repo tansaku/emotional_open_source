@@ -5,7 +5,7 @@ An Emotional Guide to Open Source Software
 ## 1. [How does Open Source work?](chapters/how_does_open_source_work.md)
 The difference between open and closed source software; who pays for work on open source; examples of successful open source projects
 
-## 2. [What does it mean to be Agile?](chapters/what_does_it_mean_to_be_agile?)
+## 2. [What does it mean to be Agile?](chapters/what_does_it_mean_to_be_agile%3F.md)
 The Agile Manifesto; the alternatives for project management; the evolution of the Agile approach and variations & components such as XP, Scrum, Kanban etc.
 
 ## 3. [Joining an Existing Project](chapters/joining_an_existing_project.md)
