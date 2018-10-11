@@ -18,16 +18,51 @@ Now this doesn't mean that open source is a panacea solution for every software 
 There are various approaches to funding open source software which include, but are not limited to:
 
 * Dual Licensing
+
+One version of the software is available as open source, while another is closed source and proprietary. Oracle's MySQL is available under a dual license, as is MongoDB.  Customers can be attracted to the open source version and potentially upsold to the closed source enterprise edition.
+
+See also https://en.wikipedia.org/wiki/Multi-licensing
+
 * Selling Professional Services
+
+While the software is given away for free, organisations can sell services such as training, technical support and/or consulting related to the software itself.  RedHat and IBM do this around the linux operating system.  Other commercial services could include compiling and packaging the software into a binary, and/or providing physical installation media such as DVDs.
+
 * Selling of Branded Merchandise
+
+The Mozilla and Wikimedia Foundations sell branded merchandise articles like t-shirts and coffee mugs.
+
 * Selling of Certificates and Trademark Use
+
+The LMS education company Moodle has a business model that involves certifying and licensing a network of commercial partners who are then authorised to use the Moodle name and logo.  A proportion of the revenue is then contributed back to core development by the Moodle Trust. 
+
 * Selling Software as a Service
+
+While the software may be open source, it is possible to sell subscriptions for online accounts or server access.
+
 * Partnership with Funding Organisations
+
+Some organisations may release code as open source when they've developed them internally as part of an open source partnership.  These organisations can be NGOs, companies, universities or governments and may hire contractors, internal developers or provide grants and stipends as does Google's Summer of Code.
+
 * Voluntary Donations
+
+Those interested in the success of open source projects may be willing to donate to see them reach their goals.
+
 * Bounty Driven Development
-* Pre-Order/Crowdfunding/Reverse-Bounty MOdel
+
+The development of individual features or functions in open source software can be incentivized by bounties, such as the Ethereum bounties of Gitcoin.  Mozilla pays and funds for security bug hunting and fixing via bounties, as does the [BountySource](https://www.bountysource.com/) platform.
+
+* Pre-Order/Crowdfunding/Reverse-Bounty Model
+
+Crowd-funding platforms such as KickStarter and IndieGogo provide frameworks to collect "pre-orders" or "donations" from individuals that can be used to pay for open source software development.
+
 * Crowdsourcing
+
+In the absence of funds per se, one can crowd-source the development of open source software, asking developers and other professionals to devote their time to the development of the software.  Linux, Google Android and Wikipedia are in part successful examples of this approach.
+
 * Advertising Supported Software
+
+Revenue can be generated from adverts.
+
 * Selling of Optional Proprietary Extensions
 * Selling of Required Proprietary Parts of a Software Product
 * Selling of Proprietary Update Systems
