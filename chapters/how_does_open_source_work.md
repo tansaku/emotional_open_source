@@ -3,7 +3,7 @@ How Does Open Source Work?
 
 :construction: UNDER CONSTRUCTION :construction:
 
-The difference between open and closed source software; who pays for work on open source; examples of successful open source projects
+_The difference between open and closed source software; who pays for work on open source; examples of successful open source projects_
 
 So, open source software; different from closed source.  Closed source being where the code that runs the software is hidden, as opposed to being available to the general public to browse in some form.  In general terms that's it. Closed source software, also referred to as proprietary software, involves intentionally restricting access to the software code.  Usually access is restricted to employees of a particular company or organisation, or possibly to specific teams within those organisations.  Why would anyone want to restrict who looks at the raw code for a particular piece of software?
 
@@ -61,15 +61,35 @@ In the absence of funds per se, one can crowd-source the development of open sou
 
 * Advertising Supported Software
 
-Revenue can be generated from adverts.
+Revenue can be generated from adverts on the site promoting the software.
 
 * Selling of Optional Proprietary Extensions
+
+Optional extensions, modules, plugins or add-ons can be sold by a company for use with an open source software package.  Assuming the extension and the core code are sufficiently separated by interfaces then this can still adhere to the core open source license.  IBM, RedHat and Cloudera sell optional extensions of this kind.  There are also vendors of optional electronics hardware that work with a free open source software project
+
 * Selling of Required Proprietary Parts of a Software Product
+
+Several games have been released open source, while requiring payment for non-software digital content such as artwork, audio or graphics materials. FSF/Stallman approved.
+
 * Selling of Proprietary Update Systems
+
+Another approach involves making the update scripts closed source.  Each individual version of the OS software is open, but the update script is closed.  This might seem trivial, but in data-intensive applications that require a big data export/import between versions, clients may be willing to pay to make that process easier. Not FSF/Stallman approved.
+
 * Re-licensing under a Proprietary License
+
+Apple did this, taking the BSD Unix operating system kernal and using it in Apple's Mac PCs which are then sold as proprietary products.
+
 * Obfuscation of Source Code
+
+Some companies release source code in an unreadable obfuscated form to be able to say they are open source, but to prevent anyone else actually understanding the code.  Not FSF approved.
+
 * Delayed Open Sourcing
-* Open Sourcing on Ens od Life
+
+This involves keeping the latest version of a software package closed source, but releasing older versions as OS after some time period.  The value of this is that customers will pay for the latest version, but are also reassured that there will potentially be community support for older versions, meaning they will have an option rather than always being forced to upgrade to the latest version.
+
+* Open Sourcing on End of Life
+
+An extreme version of the delayed release is only open sourcing at the end of the commercial life of proprietary software, again for the benefit of communities that might want to maintain that software.
 
 References
 
