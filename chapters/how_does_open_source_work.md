@@ -21,7 +21,7 @@ There are various approaches to funding open source software which include, but 
 
 * Dual Licensing
 
-  - One version of the software is available as open source, while another is closed source and proprietary. Oracle's MySQL is available under a dual license, as is MongoDB.  Customers can be attracted to the open source version and potentially upsold to the closed source enterprise edition.
+  - One version of the software is available as open source, while another is closed source and proprietary. Oracle's MySQL is available under both a proprietary license and under the GPLv2.  Various other projects use the AGPLv3 license in the same way such as the NoSQL database MongoDB, the customer relations management sofware SugarCRM and private cloud sofware such as ownCloud and NextCloud.  Customers can be attracted to the open source version and potentially upsold to the closed source enterprise edition.
 
 See also https://en.wikipedia.org/wiki/Multi-licensing
 
