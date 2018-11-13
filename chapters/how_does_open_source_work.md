@@ -27,15 +27,15 @@ See also https://en.wikipedia.org/wiki/Multi-licensing
 
 * Delayed Open Sourcing
 
-  - This involves keeping the latest version of a software package closed source, but releasing older versions as OS after some time period.  The value of this is that customers will pay for the latest version, but are also reassured that there will potentially be community support for older versions, meaning they will have an option rather than always being forced to upgrade to the latest version.
+  - This involves keeping the latest version of a software package closed source, but releasing older versions as OS after some time period.  The value of this is that customers will pay for the latest version, but are also reassured that there will potentially be community support for older versions, meaning they will have an option rather than always being forced to upgrade to the latest version.  The MariaDB community developed fork of the MySQL relational database uses this approach.
 
 * Open Sourcing on End of Life
 
-  - An extreme version of the delayed release is only open sourcing at the end of the commercial life of proprietary software, again for the benefit of communities that might want to maintain that software.
+  - An extreme version of the delayed release is only open sourcing at the end of the commercial life of proprietary software, again for the benefit of communities that might want to maintain that software.  This approac has been popularized by games companies id Software, 3D Realms and was also used in the case of Netscape Navigator and Sun's StarOffice.
 
 * Re-licensing under a Proprietary License
 
-  - Apple did this, taking the BSD Unix operating system kernal and using it in Apple's Mac PCs which are then sold as proprietary products.
+  - Apple did this, taking the BSD Unix operating system kernel, making changes to it and then using it in Apple's Mac PCs.  The nature of the BSD license means that Apple was not required to open source its changes, and allowed is to sell them as part of the software on Apple Mac PCs.
 
 ### Selling something else 
 
