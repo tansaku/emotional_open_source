@@ -21,7 +21,7 @@ There are various approaches to funding open source software which include, but 
 
 * Dual Licensing
 
-  - One version of the software is available as open source, while another is closed source and proprietary. Oracle's MySQL is available under both a proprietary license and under the GPLv2.  Various other projects use (or have used) the AGPLv3 license in the same way such as the NoSQL database MongoDB, the customer relations management sofware SugarCRM and private cloud sofware such as ownCloud and NextCloud.  Customers can be attracted to the open source version and potentially upsold to the closed source enterprise edition.
+  - One version of the software is available as open source, while another is closed source and proprietary. Oracle's MySQL is available under both a proprietary license and under the GPLv2.  Various other projects use (or have used) the AGPLv3 license in the same way such as the NoSQL database MongoDB, the customer relations management sofware SugarCRM and private cloud sofware such as ownCloud and NextCloud.  Customers can be attracted to the open source version and potentially upsold to the closed source enterprise edition.  Although note that SugarCRM has now dropped its open source support and there are now open source competitors based on forks of the codebase.  Trying to support multiple licenses can lead to community friction points.
 
 See also https://en.wikipedia.org/wiki/Multi-licensing
 
