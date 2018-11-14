@@ -5,9 +5,9 @@ How Does Open Source Work?
 
 _The difference between open and closed source software; who pays for work on open source; examples of successful open source projects_
 
-So, open source software; different from closed source.  Closed source being where the code that runs the software is hidden, as opposed to being available to the general public to browse in some form.  In broad terms that's it. Closed source software, also referred to as proprietary software, involves intentionally restricting access to the software code.  Usually access is restricted to employees of a particular company or organisation, or possibly to specific teams within those organisations.  But why would anyone want to restrict who looks at the raw code for a particular piece of software?
+So, open source software; different from closed source.  Closed source being where the code that runs the software is hidden, as opposed to being available to the general public to browse in some form.  In broad terms that's it.  Closed source software, also referred to as proprietary software, involves intentionally restricting access to the software code.  Usually access is restricted to employees of a particular company or organisation, or possibly to specific teams within those organisations.  But why would anyone want to restrict who looks at the raw code for a particular piece of software?
 
-Conceivably if you're a company who's just paid some programmers a lot of money to write the code for the software and you are hoping that you will make at least some of that money back by selling the software you might well not want people to review that code by themselves, since they might be able to make the same software and sell it cheaper than you.  Or they might be able to package it up and just run it for themselves without needing to pay you.
+Conceivably if you're a company who's just paid some programmers a lot of money to write the code for the software and you are hoping that you will make at least some of that money back by selling the software, you might not want people to review that code by themselves, since they may be able to make the same software and sell it cheaper than you.  Or they might be able to package it up and just run it for themselves without needing to pay you.
 
 In the early days there wasn't a clear distinction between open and closed source.  Early computer hobbyists freely exchanged their software code.  There wasn't an internet to easily share code on.  Then software companies got in on the act and wanted to derive revenue from the software they were creating.  Other companies liked the idea of having a specific company responsible for the correct operation of their software, someone they could call for technical support and someone they could sue if things went really wrong.  This was the dominant model towards the end of the last century, but then it started to seem that even very large and powerful companies were having trouble keeping up with open source operating systems like Linux which operated on a completely different model.
 
@@ -15,7 +15,11 @@ The source code for Linux was freely available for anyone to look at.  In additi
 
 Now this doesn't mean that open source is a panacea solution for every software project.  Linux is a special case of timing and circumstances but it shows us what is possible; and there's still the question of who pays for all this work.  In recent years we've have the odd spectacle of tremendously wealthy multi-national corporations being dependent on the volunteer time of open source coders putting in efforts here and there on critical pieces of network infrastructure (https thing?).  Is open source software supposed to survive on the good will of programmers contributing in their spare time?  How are those programmers supposed to make money from their day jobs if we're replacing all proprietary software with open source alternatives?
 
-There are various approaches to funding open source software which include, but are not limited to:
+There are various approaches to funding open source software which are often closely related to the type of software license that the code is "released" under.  Different licenses give different indications about what those sharing the software would and would not like others to do with that code.
+
+![](https://upload.wikimedia.org/wikipedia/commons/3/38/Software-license-classification-mark-webbink.svg)
+
+The more permissive the license, the more that others can do with the code, and this allows valuable return contributions from the community, but conversely may make it more difficult to make money from the software.  There are various approaches to making money from open source software:
 
 ### Selling the software sometimes
 
