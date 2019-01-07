@@ -123,6 +123,8 @@ That's an interesting idea that some of the problem is caused by machine to mach
 
 I had been assuming that the problem was arising when tests failed on another developers machine (for whatever reason) and then a slightly different set of network interactions was arising.  Or more specifically when a developer was working on a new feature and adding to the tests and then seeing a load of new cassettes and not being sure about whether to add the files, leave them out, .gitignore them or what.  Not such a hassle for an experienced developer, but working with a lot of folks just getting into coding it seems this is a particular pain point.
 
+Recently I've been working with some projects that involve webdav and I've noticed the testing setup involves running a little test webdav server locally to give a complete endpoint for the client to be tested against.  In another project we set up a dummy test server for the tests to run against - not disimilar from what Stripe provides.  These are feeling like good options to me at the moment as it seems to allow removing the brittleness from acceptance tests, but I expect there are downsides.  Trying the same approach in a closed source project I'm experiencing inconsistency, but I think that may just be me not using node promises correctly ...
+
 
 Notes
 -----
@@ -130,10 +132,10 @@ Notes
 Could ask LRUG about various things:
 
 * what folks are doing with VCR caches (dependabot concept)
-* instance variables discussion
 * automated deployment along develop, staging, production pipeline ...
 * their thoughts on responding to pull requests ...
 * how to get CI to pop the actual error message into the PR
+* instance variables discussion
 
 Refactoring Directions
 ----------------------
